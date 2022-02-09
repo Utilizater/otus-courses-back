@@ -34,7 +34,6 @@ import {
 } from './dbFunctions/commentFunctions.js';
 import { getUserIdFromRequest } from './utils/getUserId.js';
 import logger from 'morgan';
-import { send } from 'process';
 // import ExpressBrute from 'express-brute';
 
 mongoose.connect(
