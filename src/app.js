@@ -34,6 +34,7 @@ import {
 } from './dbFunctions/commentFunctions.js';
 import { getUserIdFromRequest } from './utils/getUserId.js';
 import logger from 'morgan';
+import { send } from 'process';
 // import ExpressBrute from 'express-brute';
 
 mongoose.connect(
@@ -264,6 +265,17 @@ app.get('/get-user-list', authenticatedToken, async (req, res) => {
   } catch (err) {}
 });
 
+app.get('/test', (req, res) => {
+  res.send({
+    port: process.env.PORT,
+    MONGO_DB_PASSWORD: process.env.MONGO_DB_PASSWORD,
+  });
+});
+
+app.get('/*', (req, res) => {
+  res.send('nothing is here');
+});
+
 app.listen(process.env.PORT, () => {
-  console.log('Server is running');
+  console.log('Server is running with port ' + process.env.PORT);
 });
