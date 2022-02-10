@@ -271,7 +271,7 @@ app.get('/test', (req, res) => {
 });
 
 app.get('/*', (req, res) => {
-  res.send('nothing is here');
+  res.send('nothing is here ');
 });
 
 app.listen(process.env.PORT, () => {
