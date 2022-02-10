@@ -267,7 +267,6 @@ app.get('/get-user-list', authenticatedToken, async (req, res) => {
 app.get('/test', (req, res) => {
   res.send({
     port: process.env.PORT,
-    MONGO_DB_PASSWORD: process.env.MONGO_DB_PASSWORD,
   });
 });
 
